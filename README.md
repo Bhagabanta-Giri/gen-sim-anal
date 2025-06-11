@@ -25,7 +25,8 @@ The gene strings must be of the same length and represent alleles at the same lo
 
 
 ### 2. Number of Simulations
-- **Line 3:**After providing matching genes, enter the number of simulations to run.
+
+- **Line 3:** After providing matching genes, enter the number of simulations to run.
 
 ## Notes
 
