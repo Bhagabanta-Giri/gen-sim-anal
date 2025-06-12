@@ -62,4 +62,4 @@ Built by someone who respects biology enough to simulate it, but not enough to d
 
 - **Python version: 3.12**
 - **The Duplicate Remover Section is actually under scrutiny right now.**
-- **Suggestions are welcome in the other branch or fork**
+- **Suggestions are welcome in the other (Service) branch or fork**
