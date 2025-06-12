@@ -55,3 +55,11 @@ This is open for educational use. Use it, break it, rewrite it, or make it into 
 ## Credits
 
 Built by someone who respects biology enough to simulate it, but not enough to do it on paper.
+
+---
+
+## Important Notice
+
+- **Python version: 3.12**
+- **The Duplicate Remover Section is actually under scrutiny right now.**
+- **Suggestions are welcome in the other branch or fork**

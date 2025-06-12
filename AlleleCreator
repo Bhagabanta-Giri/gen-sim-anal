@@ -1,0 +1,12 @@
+def allele_creation(given_gene):
+    output_allele_set = []
+    new_gene_loci1 = given_gene[:int(len(given_gene)/2)]
+    new_gene_loci2 = given_gene[int(len(given_gene)/2):]
+    for allele1 in new_gene_loci1:
+        for allele2 in new_gene_loci2:
+            req_allele = allele1
+            req_allele += allele2
+            output_allele_set.append(req_allele)
+    return output_allele_set
+
+print(allele_creation(input("Input gene: ")))
