@@ -51,13 +51,17 @@ for gene_1 in dad_alleles:
 
 
 
-#Getting right input
+#Getting right input again
 ###############################################################################################
 while True:
     simulations = input("How many simulations? ")
     if simulations.isdigit():
         simulations = int(simulations)
-        break
+        if not bool(simulations):
+            print("No simulation for what?")
+            print("Invalid input. Please try again.")
+        else:
+            break
     else:
         print("Enter a valid input.\n")
 ###############################################################################################
@@ -71,22 +75,36 @@ while True:
 child_pool = []
 for i in range(simulations):
     child_pool.extend(sample)
+
 ##########################################################################
 
 
 
 
+#Removing repeated gene code.
+##################################################################
 
-children = sample
+def duplicate_remover(sample):
+    
+    new_sample = []
+    
+    for _ in sample:
+        new_sample.append(tuple(_))
+    
+    new_sample = set(new_sample)
 
-def duplicate_remover(sample, children):
-    for gene_up in sample:
-        for gene_down in sample:
-            if gene_up != gene_down and set(gene_up) == set(gene_down):
-                children.pop(sample.index(gene_down))
-    return children
+    return new_sample
+##################################################################
 
-children = duplicate_remover(sample, children)
+
+
+
+
+
+#Creation of spawnssss
+##########################################################################
+
+children = duplicate_remover(sample)
 
 for comb in children:
     unique = 0
@@ -97,3 +115,4 @@ for comb in children:
     print("".join(comb) + ":- " + str(percent), "%")
 
 print(children)
+##########################################################################
