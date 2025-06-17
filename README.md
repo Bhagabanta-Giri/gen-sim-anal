@@ -1,65 +1,58 @@
-# Gene Combination Simulator
+# gen-sim-anal — Genetic Simulation & Analysis Toolkit  
+_Service Branch_
 
-A simple Python script to simulate all possible combinations of alleles between two parent genes, estimate offspring genotypes, and display the resulting probabilities based on simulation count. This isn’t just Punnett Squares—this is raw allele math powered by code.
+### TL;DR
 
----
+Simulate gene crossovers. Create theoretical children. Question biology. Repeat.
 
-## Description
+This branch contains a set of Python scripts designed to:
 
-This script performs a basic simulation of genetic inheritance. It takes two parent gene strings and calculates every possible gene pairing from those alleles. Then, it runs a specified number of simulations to determine the frequency of each unique genotype.
+- Generate allele combinations from gene sequences
+- Run bulk simulations of possible offspring gene pairs
+- Eliminate duplicates and calculate occurrence stats
 
-This is especially useful for mono-hybrid crosses (e.g., `Aa x Aa`), though it technically works for any equal-length gene strings.
-
----
-
-## How to Use
-
-### 1. Parent Gene Input
-
-You will be prompted to input two gene strings:
-
-- **Line 1:** Enter the *dad's gene* string (e.g., `Aa`).
-- **Line 2:** Enter the *mom's gene* string (e.g., `Aa` again).
-
-The gene strings must be of the same length and represent alleles at the same loci. The loop will continue until both inputs match (case-insensitive), enforcing consistency. This is genetics, not chaos.
-
-
-### 2. Number of Simulations
-
-- **Line 3:** After providing matching genes, enter the number of simulations to run.
-
-## Notes
-
-- The script generates all possible combinations of alleles (Cartesian product).
-- The simulation pool is created by extending the base combinations for the number of simulations specified.
-- Genotypes with the same alleles in different order are de-duplicated.
-- This script is intended for basic simulation and does not model crossover, linkage, or multigenic inheritance. Keep it Mendel-simple.
-- No external libraries are required.
+It's like Mendel meets Monte Carlo.
 
 ---
 
-## Limitations
+## 📁 What's in Here?
 
-- Only works properly when both parent genes have the same number of alleles.
-- Works best for mono-hybrid or small-scale inheritance patterns.
-- The script prints raw lists (e.g., `['A', 'a']`). For prettier genotype formatting like `Aa`, sorting and string conversion can be added.
+| File                | What It Does                                                         |
+|---------------------|----------------------------------------------------------------------|
+| `Simulation`        | Core script. Takes two genes, simulates child combos, outputs stats. |
+| `DuplicateRemover`  | Utility to clean, split, and deduplicate gene strings.               |
+| `AlleleCreator`     | Takes a single gene and returns all possible allele combinations.    |
+
+All files play well together, even if they pretend not to.
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.x  
+- No external libraries (just `random`)
+
+---
+
+## 🧪 Usage Flow
+
+1. Input two matching gene strings (same characters, even length, alphabetic only).
+2. Generate alleles via Cartesian crossover logic (Punnett Square).
+3. Run as many simulations as needed.
+4. Output: Unique gene combinations with their frequency percentages.
+
+Not scientifically rigorous. Not biologically accurate. Surprisingly entertaining.
+
+---
+
+## 🗒️ Notes
+
+- Scripts are modular. Mix and match as needed.
+- Originally built for experimental fun. May or may not work on real DNA.
+- Definitely works on imagination.
 
 ---
 
 ## License
 
-This is open for educational use. Use it, break it, rewrite it, or make it into a genetics-themed video game. Just don’t try to patent `['A', 'a']`.
-
----
-
-## Credits
-
-Built by someone who respects biology enough to simulate it, but not enough to do it on paper.
-
----
-
-## Important Notice
-
-- **Python version: 3.12**
-- **The Duplicate Remover Section is actually under scrutiny right now.**
-- **Suggestions are welcome in service branch or fork**
+None yet. It’s free-range code. Use responsibly—or irresponsibly, we won't judge.
